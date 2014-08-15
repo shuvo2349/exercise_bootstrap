@@ -32,41 +32,32 @@
 
 
         <div class="navbar navbar-default col-md-7 col-md-offset-1" style="height: 400px">
-            <table class="table table-bordered">
-                <caption>Student's List</caption>
-                    <thead>
-                        <tr>
 
-                            <th>ID</th>
-                            <th>Name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Bappa</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Shuvo</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Doha</td>
+            <?php
+            $course_name = $_POST['course_name'];
+            $course_code = $_POST['course_code'];
 
-                        </tr>
-                    </tbody>
-            </table>
+            $connect = mysql_connect('localhost','root','');
+            $select = mysql_select_db('student_system',$connect);
+            $query = "Insert into add_course(course_name,course_code) values('$course_name','$course_code')";
+            $result = mysql_query($query);
+
+            if($result)
+            {
+                echo "Course Added";
+            }
+            else
+            {
+                echo "Not Added";
+            }
+            ?>
 
         </div>
-    </div>
 
 
-    <div class="row">
 
-        <div class="navbar navbar-default" style="height: 50px">
 
-        </div>
+
     </div>
 
 </div>
