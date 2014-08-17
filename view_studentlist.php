@@ -83,6 +83,16 @@
                 </div>
                 <div class="col-md-6">
 
+                    <label for="edit_name" class="col-sm-2 control-label">Insert ID for Edit</label>
+                    <div class="col-sm-10">
+                        <form role="form" action="edit_student_by_id.php" method="post">
+                            <input type="text" name="edit_name" class="form-control" id="edit_name" placeholder="Insert ID for Edit a Student"></br>
+                            <input type="text" name="edit_first_name" class="form-control" id="edit_first_name" placeholder="Insert New First Name"></br>
+                            <input type="text" name="edit_last_name" class="form-control" id="edit_last_name" placeholder="Insert New Last Name">
+
+                            <button type="submit" class="btn btn-default">Edit</button>
+                        </form>
+                    </div>
 
                 </div>
             </div>
