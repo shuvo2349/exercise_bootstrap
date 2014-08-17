@@ -21,11 +21,11 @@
     <div class="row">
         <div class="navbar navbar-default col-md-4" style="height: 400px">
             <a href="index.html" class="list-group-item"> Menu </a>
-            <a href="view_studentlist.html" class="list-group-item active">View Student List</a>
+            <a href="view_studentlist.php" class="list-group-item active">View Student List</a>
             <a href="add_student.html" class="list-group-item">Add Students</a>
             <a href="view_courselist.html" class="list-group-item">View Courses</a>
             <a href="add_courses.html" class="list-group-item">Add Courses</a>
-            <a href="add_single_course.php" class="list-group-item">Assign Single Course to Student</a>
+            <a href="add_single_course.php" class="list-group-item">Assign Single Course to Studen</a>
             <a href="#" class="list-group-item">Add Students with Courses</a>
         </div>
 
@@ -34,32 +34,28 @@
         <div class="navbar navbar-default col-md-7 col-md-offset-1" style="height: 400px">
 
             <?php
-            {
-                $first_name = $_POST['first_name'];
-                $last_name = $_POST['last_name'];
-
                 $connect = mysql_connect('localhost','root','');
-                mysql_select_db('student_system',$connect);
-                $query = "Insert into add_student (first_name,last_name) values ('$first_name','$last_name')";
-                $result = mysql_query($query);
-                if($result)
-                {
-                    echo "Student Added";
-                }
-                else
-                {
-                    echo "Not Added";
-                }
-            }
+                $db = mysql_select_db('student_system',$connect);
+                $id = $_POST['delete_name'];
+                $result = mysql_query("DELETE FROM add_student where id = '$id'");
+
+                    if($result)
+                        {
+                        echo "Student Deleted";
+                        }
+                    else
+                        {
+                        echo "Not Deleted";
+                        }
             ?>
 
-        </div>
+</div>
 
 
 
 
 
-    </div>
+</div>
 
 </div>
 
