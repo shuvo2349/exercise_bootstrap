@@ -34,21 +34,21 @@
         <div class="navbar navbar-default col-md-7 col-md-offset-1" style="height: 400px">
 
             <?php
-            $course_name = $_POST['course_name'];
-            $course_code = $_POST['course_code'];
 
             $connect = mysql_connect('localhost','root','');
-            $select = mysql_select_db('student_system',$connect);
-            $query = "Insert into add_course(course_name,course_code) values('$course_name','$course_code')";
-            $result = mysql_query($query);
+            $db = mysql_select_db('student_system',$connect);
+            $ID = $_POST['edit_name']; /** get the course ID **/
+            $first_name = $_POST['edit_first_name'];
+            $last_name = $_POST['edit_last_name'];
+            $result = mysql_query("UPDATE add_student SET first_name = '$first_name', last_name = '$last_name' WHERE id = '$ID'");
 
             if($result)
             {
-                echo "Course Added";
+                echo "Student Updated";
             }
             else
             {
-                echo "Not Added";
+                echo "Not Updated";
             }
             ?>
 

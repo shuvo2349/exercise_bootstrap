@@ -37,13 +37,15 @@
                 <div class="form-group">
 
                     <div class="form-group">
-                        <label for="inputName">Student Name</label>
-                        <input type="student_name" name="student_name" class="form-control" id="inputName" placeholder="Insert Your Name">
+                        <label for="input_first_name">Student's First Name</label>
+                        <input type="student_first_name" name="student_first_name" class="form-control" id="input_first_name" placeholder="Insert Your First Name"></br>
+                        <label for="input_last_name">Student's Last Name</label>
+                        <input type="student_last_name" name="student_last_name" class="form-control" id="input_last_name" placeholder="Insert Your Last Name">
                     </div>
 
                     <label for="course_name">Select Course</label>
 
-                    <select class="form-control" name="course_Title[]" multiple="multiple">
+                    <select class="form-control" name="course_title[]" multiple="multiple">
                         <?php
                         $connect = mysql_connect('localhost','root','');
                         $db = mysql_select_db('student_system',$connect);
