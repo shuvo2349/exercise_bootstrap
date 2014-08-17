@@ -47,10 +47,10 @@
                         $connect = mysql_connect('localhost','root','');
                         mysql_select_db('student_system',$connect);
                         $i = 0;
-                        $query = "Select * form add_student";
+                        $query = "Select * from add_student";
                         $result = mysql_query($query);
                         while($data = mysql_fetch_object($result) ):
-                        ?>
+                ?>
 
                 <tr>
                     <td><?php echo ++$i;?></td>
@@ -69,7 +69,7 @@
         </div>
 
 
-        <div class="navbar navbar-default" style="height: 50px">
+        <!--<div class="navbar navbar-default" style="height: 50px"-->
 
         </div>
     </div>
